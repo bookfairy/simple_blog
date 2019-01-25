@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-
+from django.urls import reverse
 from article.models import Article
 
 
@@ -29,6 +29,6 @@ def create_article(request):
             title=title,
             content=content
         )
-        return redirect(list)
+        return redirect(reverse('list'))
 
     return render(request, 'create.html')
