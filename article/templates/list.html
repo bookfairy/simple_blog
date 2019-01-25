@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Articles</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">글 번호</th>
+            <th scope="col">제목</th>
+            <th scope="col">작성일</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <th scope="row">{{ article.id }}</th>
+                <td><a href="{% url 'detail' article.id %}">{{ article.title }}</a></td>
+                <td>{{ article.created_at }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'create' %}" class="btn btn-primary">게시글 작성</a>
+
+{% endblock %}

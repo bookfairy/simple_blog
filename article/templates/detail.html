@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">{{ article.title }}</h1>
+        <p class="lead">{{ article.created_at }}</p>
+        <hr class="my-4">
+        <p>{{ article.content }}</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'list' %}" role="button">목록 보러가가</a>
+    </div>
+
+{% endblock %}
